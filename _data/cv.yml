@@ -1,189 +1,179 @@
 cv:
-  name: Albert Einstein
-  label: Scientist
-  email: einstein@example.com
-  location: Princeton, NJ
+  name: Om Rastogi
+  label: MS in Artificial Intelligence
+  email: rastogi.o@northeastern.edu
   image: ""
-  summary: A German-born theoretical physicist, widely ranked among the greatest and most influential scientists of all time
+  summary: >
+    MS student in Artificial Intelligence at Northeastern University, Khoury College of Computer Sciences.
+    Research interests in multimodal ML, computer vision, and diffusion-based generative models.
 
   social_networks:
-    - network: X
-      username: AlbertEinstein
     - network: GitHub
-      username: example
+      username: omrastogi
     - network: LinkedIn
-      username: example
-
-  address:
-    street: 2712 Broadway St
-    city: San Francisco
-    region: California
-    postalCode: CA 94115
-    countryCode: US
+      username: om-rastogi-a886b4b2
 
   sections:
     Education:
-      - institution: University of Zurich
-        location: Zurich, Switzerland
-        url: https://www.uzh.ch/
-        area: Physics
-        studyType: PhD
-        start_date: 1900
-        end_date: 1905
-        score: ""
-        courses: "Theory of Relativity"
+      - institution: Northeastern University
+        location: Boston, MA
+        url: https://www.northeastern.edu/
+        area: Artificial Intelligence
+        studyType: Master of Science
+        start_date: 2025-09-01
+        end_date: 2027-08-01
         highlights:
-          - Description 1.
-          - Description 2.
+          - Khoury College of Computer Sciences
+          - Affiliated with Augmented Cognition Lab, advised by Prof. Sarah Ostadabbas
 
-      - institution: Eidgenössische Technische Hochschule
-        location: Zurich, Switzerland
-        area: Physics
-        studyType: Federal teaching diploma
-        start_date: 1896
-        end_date: 1900
+      - institution: JSS Academy of Technical Education, Noida
+        location: Noida, India
+        area: Electronics and Communication Engineering
+        studyType: Bachelor of Technology
+        start_date: 2017-08-01
+        end_date: 2021-07-01
+        score: "71%"
         highlights:
-          - Description 1.
-          - Description 2.
+          - Creative Head at Quanta JSS; Member of EDC
 
     Experience:
-      - company: Institute for Advanced Study, Princeton University
-        position: Professor of Theoretical Physics
-        location: Princeton University, NJ
-        start_date: 1933
-        end_date: 1955
-        summary: Teaching at Palmer Physical Laboratory (now 302 Frist Campus Center). While not a professor at Princeton, I associated with the physics professors and continued to give lectures on campus.
+      - company: Northeastern University — Augmented Cognition Lab
+        position: Graduate Research Assistant
+        location: Boston, MA
+        start_date: 2025-09-01
+        summary: Research on multimodal ML, video understanding, and human motion estimation.
         highlights:
-          - Relativity
-          - Description 2.
+          - Building AdShot benchmark evaluating MLLMs on advertisement video clipping (30s → 15s); 823 video pairs, 194 brands; under review at IJCAI 2026.
+          - Extending GVHMR to multi-person scenarios using scene detection, Visual Odometry patching, SMPL mesh overlay rendering, and YOLO tracking on Northeastern Discovery cluster (SLURM).
+          - Supporting IARPA MOVES pre-proposal at the Augmented Cognition Lab.
 
-      - company: California Institute of Technology
-        position: Visiting Professor
-        location: Pasadena, California, US
-        start_date: 1933
-        end_date: 1933
+      - company: Dashtoon
+        position: Research Engineer
+        location: Bengaluru, India
+        start_date: 2025-03-01
+        end_date: 2025-08-01
         highlights:
-          - Description 1.
-          - Description 2.
+          - Trained and shipped Flux LoRA adapters for 20+ characters across 8 animation styles; validated at 2048 resolution with FP16, batching, and caching optimizations.
+          - Integrated Hidream-l1 (MoE) into animated character pipeline; improved prompt alignment and output smoothness at 2048 resolution.
+          - Curated 10,000+ image Bollywood dataset from 100+ movies via automated extraction pipeline to reduce regional bias in generation.
+          - Evaluated Google Veo 2 (early access) for character animation; partnered with GCP team to integrate workflow into Frameo AI platform.
 
-      - company: Kaiser Wilhelm Institute for Physics
-        position: Director
-        location: Berlin, Germany
-        start_date: 1917
-        end_date: 1933
-
-      - company: Karl-Ferdinand University
-        position: Professor of Theoretical Physics
-        location: Prague, Czechoslovakia
-        start_date: 1911
-        end_date: 1917
-
-      - company: University of Zurich
-        position: Associate Professor of Theoretical Physics
-        location: Zurich, Switzerland
-        start_date: 1909
-        end_date: 1911
-
-    Volunteer:
-      - company: People's Climate March
-        position: Lead Organizer
-        location: Zurich, Switzerland
-        start_date: 2014-04-01
-        end_date: 2015-07-01
-        summary: Lead organizer for the New York City branch of the People's Climate March, the largest climate march in history.
+      - company: Indian Institute of Science (IISc) — Vision and AI Lab
+        position: Project Associate
+        location: Bengaluru, India
+        start_date: 2024-01-01
+        end_date: 2025-02-01
         highlights:
-          - "Awarded 'Climate Hero' award by Greenpeace for my efforts organizing the march."
-          - "Men of the year 2014 by Time magazine"
+          - Trained DepthDiT, a Diffusion Transformer for monocular depth estimation, adapting PixArt-Alpha and PixArt-Sigma backbones; best checkpoint AbsRel 0.107, δ1 0.88 at 40k steps.
+          - Built automated pipeline to curate and QA 30,000 MatrixCity images for depth model training.
+          - Designed masked diffusion loss for reflective surfaces; implemented DreamBooth and RealFill-inspired inpainting workflows.
 
-    Awards:
-      - title: Nobel Prize in Physics
-        authors:
-          - "Royal Swedish Academy of Sciences"
-        date: 1921-11-01
-        awarder: Royal Swedish Academy of Sciences
-        url: https://www.nobelprize.org/prizes/physics/1921/einstein/biographical/
-        summary: The Nobel Prizes are five separate prizes that, according to Alfred Nobel's will of 1895, are awarded to 'those who, during the preceding year, have conferred the greatest benefit to humankind.'
+      - company: Carnegie Mellon University (Collaboration)
+        position: Research Collaborator
+        location: Remote
+        start_date: 2023-10-01
+        end_date: 2024-02-01
+        highlights:
+          - Evaluated transfer learning for 3D cryo-ET classification using MedicalNet and ModelNet40-pretrained models.
+          - Analyzed pretrained representations with t-SNE to assess cross-domain transferability to cryo-ET.
+          - Converted 3D cryo-ET volumes into point-cloud representations for comparison against voxel-based pipelines.
 
-      - title: Max Planck Medal
-        authors:
-          - "German Physical Society"
-        date: 2029
-        awarder: German Physical Society
-        summary: Awarded for outstanding scientific achievement
+      - company: Menmitsu Private Limited
+        position: Senior Research Engineer (Founding Member)
+        location: Gurugram, India
+        start_date: 2022-12-01
+        end_date: 2024-01-01
+        highlights:
+          - "ITC Freight Damage Mitigation: deployed YOLO-based truck-loading monitoring achieving 70% rough-handling detection accuracy with <5% false positives; led integration of 3 intelligent modules operating in near real-time."
+          - "Smartivity Defect Detection: achieved 97% accuracy on missing-part detection, reducing inspection time from 10 to 2 seconds (5x speedup); built millimeter-precision homography-based deviation detection system."
+
+      - company: EZ Works
+        position: Data Scientist
+        location: Gurugram, India
+        start_date: 2021-07-01
+        end_date: 2022-12-01
+        highlights:
+          - Finetuned Neural Machine Translation models (Arabic–English) exceeding 50 BLEU score; deployed with ONNX-optimized beam search for faster inference.
+          - Built BERT-based translation memory with custom batch cosine similarity achieving 10x retrieval speedup.
+          - Implemented LCNN for wireframe and tabular detection in PPT; built document segmentation for image-based documents.
+          - Built EZ Flip chart/diagram conversion modules with 100% error-free output at 3x speed improvement.
+
+      - company: CyberCure Technologies
+        position: Machine Learning Engineer (Intern)
+        location: India
+        start_date: 2020-12-01
+        end_date: 2021-06-01
+        highlights:
+          - Built LSTM-based demand forecasting for 200+ products across state/territory/beat/shop-owner hierarchy; 90% accuracy on frequently selling products.
+          - Added convolutional models to mitigate exogenous correlation, improving accuracy and reducing training/inference time by 2x.
+          - Designed and deployed analytics dashboard for predictions and demand analysis.
+
+      - company: Arcturus Business Solutions
+        position: Python Developer (Intern)
+        location: Noida, India
+        start_date: 2019-09-01
+        end_date: 2020-01-01
+        highlights:
+          - Upgraded GUI for Intelligent Surveillance Solution using Python PyQt5 and SQL.
+          - Added new features and incorporated statistical dashboard into existing system.
+
+      - company: Central Electronics Limited
+        position: Intern
+        location: Ghaziabad, India
+        start_date: 2018-06-01
+        end_date: 2018-07-01
+        highlights:
+          - Quality check in System Production Department; training in Digital Axle Counter for Indian Railways, Solar Panels, and Microwave Electronics.
 
     Publications:
-      - title: Zur Elektrodynamik bewegter Körper
+      - title: "Color Masking Method for Variable Luminosity in Videos with Application in Lane Detection Systems"
         authors:
-          - Albert Einstein
-        publisher: Annalen der Physik
-        releaseDate: 1905-06-30
-        url: https://en.wikisource.org/wiki/Translation:On_the_Electrodynamics_of_Moving_Bodies
-        summary: It concerned an interpretation of the Michelson–Morley experiment and the properties of light and time. Special relativity incorporates the principle that the speed of light is the same for all inertial observers regardless of the state of motion of the source.
-
-      - title: Über einen die Erzeugung und Verwandlung des Lichtes betreffenden heuristischen Gesichtspunkt
-        authors:
-          - Albert Einstein
-        publisher: Annalen der Physik
-        releaseDate: 1905-03-18
-        url: https://de.wikisource.org/wiki/Über_einen_die_Erzeugung_und_Verwandlung_des_Lichtes_betreffenden_heuristischen_Gesichtspunkt
-        summary: In the second paper, he applied the quantum theory to light to explain the photoelectric effect. In particular, he used the idea of light quanta (photons) to explain experimental results, but stressed the importance of the experimental results. The importance of his work on the photoelectric effect earned him the Nobel Prize in Physics in 1921.
-
-      - title: Die Grundlage der allgemeinen Relativitätstheorie
-        authors:
-          - Albert Einstein
-        publisher: Annalen der Physik
-        releaseDate: 1916-03-20
-        url: https://de.wikisource.org/wiki/Die_Grundlage_der_allgemeinen_Relativitätstheorie
-        summary: The publication of the theory of general relativity made him internationally famous. He was professor of physics at the universities of Zurich (1909–1911) and Prague (1911–1912), before he returned to ETH Zurich (1912–1914).
-
-    Skills:
-      - name: Physics
-        level: Master
-        icon: fa-solid fa-hashtag
-        keywords: "Quantum Mechanics, Quantum Computing, Quantum Information, Quantum Cryptography, Quantum Communication, Quantum Teleportation"
-
-    Languages:
-      - name: German
-        summary: "Native speaker"
-
-      - name: English
-        summary: "Fluent"
-
-    Interests:
-      - name: Physics
-        icon: fa-solid fa-tag
-        keywords: "Quantum Mechanics, Quantum Computing, Quantum Information, Quantum Cryptography, Quantum Communication, Quantum Teleportation"
+          - Om Rastogi
+        publisher: "Proceedings of International Conference on Machine Intelligence and Data Science Applications, Springer"
+        releaseDate: 2021-05-01
+        summary: >
+          A color thresholding method independent of lighting conditions using a two-layered process:
+          luminosity filter followed by variable color threshold. Applied to lane detection for robust
+          performance across weather and time-of-day variations.
 
     Certificates:
+      - name: "Graph Theory and Machine Learning: From Fundamentals to Advanced Applications"
+        date: 2024-11-01
+        issuer: Indian Institute of Science
+        icon: fa-solid fa-graduation-cap
+
+      - name: Amazon Web Services Cloud Practitioner
+        date: 2021-12-01
+        issuer: Amazon Web Services
+        icon: fa-brands fa-aws
+
+      - name: Deep Learning Specialization
+        date: 2020-08-01
+        issuer: DeepLearning.AI
+        icon: fa-solid fa-brain
+
+      - name: Applied Machine Learning in Python
+        date: 2020-04-01
+        issuer: University of Michigan
+        icon: fa-brands fa-python
+
       - name: Machine Learning
-        date: 2018-01-01
+        date: 2019-10-01
         issuer: Stanford University
-        icon: fa-solid fa-location-dot
+        icon: fa-solid fa-robot
 
-      - name: Quantum Computing
-        date: 2018-01-01
-        issuer: Stanford University
-        icon: fa-solid fa-tag
+    Skills:
+      - name: Machine Learning & AI
+        level: Expert
+        icon: fa-solid fa-brain
+        keywords: "PyTorch, Diffusion Models, Transformers, LoRA, Flux, DiT, Computer Vision, Multimodal LLMs, Depth Estimation, YOLO, NMT, BERT"
 
-      - name: Quantum Information
-        date: 2018-01-01
-        issuer: Stanford University
-        icon: fa-solid fa-envelope
+      - name: Infrastructure & Deployment
+        level: Intermediate
+        icon: fa-solid fa-server
+        keywords: "AWS, GCP, Docker, SLURM, ONNX, FastAPI, LangGraph, ChromaDB, Railway, Vercel"
 
-    Projects:
-      - name: Quantum Computing
-        summary: Quantum computing is the use of quantum-mechanical phenomena such as superposition and entanglement to perform computation. Computers that perform quantum computations are known as quantum computers.
-        highlights:
-          - Quantum Teleportation
-          - Quantum Cryptography
-        start_date: 2018-01-01
-        end_date: 2018-01-01
-
-    References:
-      - name: Professor John Doe
-        icon: fa-solid fa-laptop
-        reference: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam condimentum, diam quis convallis euismod, arcu mi ullamcorper lorem, a vestibulum nunc magna at sem. Sed in risus ac felis varius blandit.
-
-      - name: Professor Jane Smith
-        icon: fa-solid fa-thumbtack
-        reference: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam condimentum, diam quis convallis euismod, arcu mi ullamcorper lorem, a vestibulum nunc magna at sem. Sed in risus ac felis varius blandit.
+      - name: Programming
+        level: Expert
+        icon: fa-solid fa-code
+        keywords: "Python, SQL, PyQt5, React"
