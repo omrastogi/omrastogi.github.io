@@ -77,9 +77,9 @@ ninja.data = [{
           description: "Diffusion Transformer for monocular depth estimation — adapting PixArt-Alpha and PixArt-Sigma for dense prediction",
           section: "Projects",handler: () => {
               window.location.href = "/projects/2_depthdit/";
-            },},{id: "projects-production-cv-deployments-at-menmitsu",
-          title: 'Production CV Deployments at Menmitsu',
-          description: "Founding senior engineer — shipped YOLO-based freight damage detection and defect inspection for ITC and Smartivity",
+            },},{id: "projects-production-cv-deployments-at-collablens",
+          title: 'Production CV Deployments at Collablens',
+          description: "Built and deployed computer vision systems for ITC freight monitoring and Smartivity defect detection",
           section: "Projects",handler: () => {
               window.location.href = "/projects/3_menmitsu/";
             },},{id: "projects-gvhmr-multi-person-extension",
