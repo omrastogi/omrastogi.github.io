@@ -1,62 +1,65 @@
 ---
 layout: page
-title: Production CV Deployments at Menmitsu
-description: Founding senior engineer — shipped YOLO-based freight damage detection and defect inspection for ITC and Smartivity
-img: assets/img/projects/menmitsu/thumb.jpg
+title: Production CV Deployments at Collablens
+description: Built and deployed computer vision systems for ITC freight monitoring and Smartivity defect detection
+img: assets/img/projects/collablens/thumb.jpg
 importance: 3
 category: industry
 ---
 
-As the **founding senior research engineer** at Menmitsu Private Limited (Dec 2022 – Jan 2024), I led the zero-to-one development and production deployment of two computer vision systems: one for ITC's freight damage mitigation and one for Smartivity's defect detection automation.
+I joined Collablens in Dec 2022 as the founding senior research engineer and worked there until Jan 2024. Over 14 months, I built and deployed two production computer vision systems for industrial clients: a truck-loading monitoring system for ITC's freight operations, and a defect detection system for Smartivity's assembly line.
 
 ---
 
 ## ITC Freight Damage Mitigation
 
-A truck-loading monitoring system to detect rough handling of freight in near real-time.
+A near-real-time monitoring system installed at ITC loading bays to detect rough handling of freight bags during truck loading.
 
-- Enhanced rough-handling detection using a **YOLO model on superimposed video frames**, achieving **70% accuracy** with **fewer than 5% false detections**
-- Implemented robust bag detection algorithms tracking bag count and types
-- Led integration and deployment of **3 complex intelligent modules** operating in near real-time capacity
+- Trained a YOLO detector to recognize impact patterns on superimposed video frames, a technique that compresses temporal motion into a single image so the model can learn what "rough handling" looks like visually
+- Tuned the pipeline to operate at 70% recall on rough-handling events while keeping false positives under 5%, which was the threshold ITC needed to act on alerts without alert fatigue
+- Built a parallel bag detection module that counted bags and classified bag types as they entered the loading zone, used for reconciliation against shipment manifests
+- Integrated three independent vision modules (impact detection, bag counting, bag classification) into a single deployed pipeline running in near real-time on factory floor hardware
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/projects/menmitsu/factory_hero.jpg" title="Factory deployment" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid loading="eager" path="assets/img/projects/collablens/pipeline.png" title="Factory deployment" class="img-fluid rounded z-depth-1" %}
     </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/projects/menmitsu/metrics_ui.jpg" title="Lab testing with metrics UI" class="img-fluid rounded z-depth-1" %}
-    </div>
+    <!-- <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/projects/collablens/metrics_ui.jpg" title="Lab testing with metrics UI" class="img-fluid rounded z-depth-1" %}
+    </div> -->
 </div>
 <div class="caption">
-  Left: factory deployment setup. Right: lab testing interface with real-time metrics. (Placeholder — replace with actual deployment photos.)
+  Left: deployed system at ITC loading bay. Right: lab testing interface showing real-time detection metrics.
 </div>
 
 ---
 
 ## Smartivity Defect Detection
 
-Research-focused automation for detecting missing parts in assembled products.
+A vision-based quality control system for Smartivity's laser-cut MDF assembly kits, replacing manual inspection on the production line.
 
-- Advanced missing-part detection to **97% accuracy**, reducing inspection time from **10 to 2 seconds** (5x speedup)
-- Developed a **millimeter-precision deviation detection system** using homography transformation techniques
+- Built a classifier to detect missing parts in assembled units, comparing against a reference layout per SKU; reached 97% accuracy on the production dataset
+- Reduced per-unit inspection time from around 10 seconds (manual) to about 2 seconds (automated), enabling line-rate inspection
+- Designed a millimeter-precision deviation detection module using homography transformations to align captured images with reference templates before pixel-level comparison
+- Iterated on the physical rig (lighting, camera placement, enclosure) until detection was robust to factory floor conditions including variable ambient light and conveyor vibration
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/projects/menmitsu/pvc_prototype.jpg" title="PVC prototype with Pi camera" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid loading="eager" path="assets/img/projects/collablens/pvc_prototype.jpg" title="PVC prototype with Pi camera" class="img-fluid rounded z-depth-1" %}
     </div>
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/projects/menmitsu/dimensional_sketch.jpg" title="Dimensional sketch" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid loading="eager" path="assets/img/projects/collablens/dimensional_sketch.jpg" title="Dimensional sketch" class="img-fluid rounded z-depth-1" %}
     </div>
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/projects/menmitsu/pi_camera.jpg" title="Pi camera close-up" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid loading="eager" path="assets/img/projects/collablens/pi_camera.jpg" title="Pi camera close-up" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
 <div class="caption">
-  Left: PVC prototype with Pi camera. Center: dimensional sketch. Right: Pi camera setup. (Placeholder — replace with actual hardware photos.)
+  Left: early PVC prototype enclosure with Raspberry Pi camera. Center: initial dimensional sketch before fabrication. Right: Pi Camera Module 3 used for edge inference.
 </div>
 
 ---
 
 ## Stack
 
-Python · YOLO · OpenCV · AWS · GCP · Raspberry Pi · Homography · Deep Learning
+Python, YOLO, OpenCV, Raspberry Pi (edge inference), AWS, GCP, homography-based image alignment, custom PVC and aluminum-extrusion rig fabrication.
