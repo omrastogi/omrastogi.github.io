@@ -96,7 +96,7 @@ ninja.data = [{
           title: 'Production Diffusion Pipelines at Dashtoon',
           description: "Flux LoRA adapters for 20+ characters, Hidream-l1 MoE integration, Bollywood bias mitigation, and Google Veo 2 evaluation",
           section: "Projects",handler: () => {
-              window.location.href = "/projects/6_dashtoon/";
+              window.location.href = "/projects/archive/6_dashtoon/";
             },},{id: "teachings-data-science-fundamentals",
           title: 'Data Science Fundamentals',
           description: "This course covers the foundational aspects of data science, including data collection, cleaning, analysis, and visualization. Students will learn practical skills for working with real-world datasets.",
