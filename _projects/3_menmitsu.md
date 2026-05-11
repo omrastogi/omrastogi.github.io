@@ -43,19 +43,69 @@ A vision-based quality control system for Smartivity's laser-cut MDF assembly ki
 - Designed a millimeter-precision deviation detection module using homography transformations to align captured images with reference templates before pixel-level comparison
 - Iterated on the physical rig (lighting, camera placement, enclosure) until detection was robust to factory floor conditions including variable ambient light and conveyor vibration
 
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/projects/collablens/pvc_prototype.jpg" title="PVC prototype with Pi camera" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/projects/collablens/dimensional_sketch.jpg" title="Dimensional sketch" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/projects/collablens/pi_camera.jpg" title="Pi camera close-up" class="img-fluid rounded z-depth-1" %}
+The system went through six iterations between the first sketch and the final production rig. The progression below walks through design, prototype, development, first on-site deployment, debugging under factory conditions, and the two final production modules.
+
+<div class="row justify-content-center">
+    <div class="col-md-7">
+        {% include figure.liquid loading="eager" path="assets/img/projects/collablens/design.jpg" title="Design sketch" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
 <div class="caption">
-  Left: early PVC prototype enclosure with Raspberry Pi camera. Center: initial dimensional sketch before fabrication. Right: Pi Camera Module 3 used for edge inference.
+  <strong>Design.</strong> Initial dimensional sketches and component layout, drafted before fabrication.
+</div>
+
+<div class="row justify-content-center">
+    <div class="col-md-5">
+        {% include figure.liquid loading="eager" path="assets/img/projects/collablens/prototype.jpg" title="PVC prototype" class="img-fluid rounded z-depth-1" %}
+    </div>
+</div>
+<div class="caption">
+  <strong>Prototype.</strong> First physical build — PVC enclosure with mounted Raspberry Pi Camera Module 3.
+</div>
+
+<div class="row align-items-center">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/projects/collablens/dev1.jpg" title="Development — bench testing" class="img-fluid rounded z-depth-1" %}
+    </div>
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/projects/collablens/dev2.jpg" title="Development — integrated rig" class="img-fluid rounded z-depth-1" %}
+    </div>
+</div>
+<div class="caption">
+  <strong>Development.</strong> Bench-testing the imaging and inference pipeline before factory installation.
+</div>
+
+<div class="row justify-content-center">
+    <div class="col-md-4">
+        {% include figure.liquid loading="eager" path="assets/img/projects/collablens/first_deployment.jpg" title="First on-site deployment" class="img-fluid rounded z-depth-1" %}
+    </div>
+</div>
+<div class="caption">
+  <strong>First Deployment.</strong> Rig installed at the Smartivity assembly line for the first on-site test.
+</div>
+
+<div class="row align-items-center">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/projects/collablens/debug.jpg" title="On-site debugging" class="img-fluid rounded z-depth-1" %}
+    </div>
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/projects/collablens/debug2.jpg" title="On-site debugging — lighting and alignment" class="img-fluid rounded z-depth-1" %}
+    </div>
+</div>
+<div class="caption">
+  <strong>Debugging.</strong> Iterating on lighting, camera placement, and conveyor alignment under factory floor conditions.
+</div>
+
+<div class="row align-items-center">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/projects/collablens/missing_parts_detection.jpg" title="Missing parts detection" class="img-fluid rounded z-depth-1" %}
+    </div>
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/projects/collablens/milimeter_defects.jpg" title="Millimeter-precision defect detection" class="img-fluid rounded z-depth-1" %}
+    </div>
+</div>
+<div class="caption">
+  <strong>Final Deployments.</strong> Left: missing-parts detection running on the production line. Right: millimeter-precision defect detection comparing captured frames against the reference template.
 </div>
 
 ---
