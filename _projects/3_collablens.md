@@ -20,16 +20,50 @@ A near-real-time monitoring system installed at ITC loading bays to detect rough
 - Built a parallel bag detection module that counted bags and classified bag types as they entered the loading zone, used for reconciliation against shipment manifests
 - Integrated three independent vision modules (impact detection, bag counting, bag classification) into a single deployed pipeline running in near real-time on factory floor hardware
 
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/projects/collablens/pipeline.png" title="Factory deployment" class="img-fluid rounded z-depth-1" %}
+<style>
+  .itc-flow-row video {
+    width: 100%;
+    height: 220px;
+    object-fit: contain;
+    background: #000;
+    display: block;
+  }
+  .itc-flow-row figure {
+    margin: 0;
+  }
+</style>
+
+<div class="row justify-content-center">
+    <div class="col-md-5">
+        {% include video.liquid path="assets/img/projects/collablens/pose_det.mp4" class="img-fluid rounded z-depth-1" width="100%" controls=true muted=true loop=true autoplay=true %}
     </div>
-    <!-- <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/projects/collablens/metrics_ui.jpg" title="Lab testing with metrics UI" class="img-fluid rounded z-depth-1" %}
-    </div> -->
 </div>
 <div class="caption">
-  Left: deployed system at ITC loading bay. Right: lab testing interface showing real-time detection metrics.
+  Pose estimation locates the worker and the bag in frame, isolating the region used downstream by the motion-analysis stage.
+</div>
+
+<div class="row itc-flow-row align-items-center">
+    <div class="col-md-4 mt-3 mt-md-0">
+        {% include video.liquid path="assets/img/projects/collablens/violation_3980.mp4" class="rounded z-depth-1" controls=true muted=true loop=true autoplay=true %}
+    </div>
+    <div class="col-md-4 mt-3 mt-md-0">
+        {% include video.liquid path="assets/img/projects/collablens/video_zoom_3983.mp4" class="rounded z-depth-1" controls=true muted=true loop=true autoplay=true %}
+    </div>
+    <div class="col-md-4 mt-3 mt-md-0">
+        {% include video.liquid path="assets/img/projects/collablens/optical_flow_3983.mp4" class="rounded z-depth-1" controls=true muted=true loop=true autoplay=true %}
+    </div>
+</div>
+<div class="caption">
+  Optical-flow pipeline. Left: raw clip flagged as a rough-handling violation. Center: cropped region zoomed onto the worker–bag interaction. Right: dense optical flow on that region — the high-magnitude motion vectors are the signal used to confirm the violation.
+</div>
+
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/projects/collablens/pipeline.png" title="Pipeline architecture" class="img-fluid rounded z-depth-1" %}
+    </div>
+</div>
+<div class="caption">
+  End-to-end pipeline running in near real-time on factory floor hardware.
 </div>
 
 ---
