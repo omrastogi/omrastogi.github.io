@@ -146,4 +146,6 @@ The system went through six iterations between the first sketch and the final pr
 
 ## Stack
 
-Python, YOLO, OpenCV, Raspberry Pi (edge inference), AWS, GCP, homography-based image alignment, custom PVC and aluminum-extrusion rig fabrication.
+**Detection & CV:** YOLO, OpenCV, homography-based image alignment
+**Deployment:** Raspberry Pi (edge inference), Python serving, AWS, GCP
+**Hardware:** custom PVC and aluminum-extrusion rig fabrication, Pi Camera Module 3
