@@ -81,7 +81,7 @@ ninja.data = [{
           title: 'Production CV Deployments at Collablens',
           description: "Built and deployed computer vision systems for ITC freight monitoring and Smartivity defect detection",
           section: "Projects",handler: () => {
-              window.location.href = "/projects/3_menmitsu/";
+              window.location.href = "/projects/3_collablens/";
             },},{id: "projects-gvhmr-multi-person-extension",
           title: 'GVHMR Multi-Person Extension',
           description: "Extending global-frame human motion recovery to multi-person scenes for IARPA MOVES",
