@@ -89,7 +89,7 @@ ninja.data = [{
               window.location.href = "/projects/4_gvhmr/";
             },},{id: "projects-venumatch",
           title: 'VenuMatch',
-          description: "Agentic venue matching system built in ~5 hours — LangGraph + ChromaDB + FastAPI + React",
+          description: "Agentic venue matching system using LangGraph, ChromaDB, FastAPI, and React/Vite.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/5_venumatch/";
             },},{id: "projects-production-diffusion-pipelines-at-dashtoon",
