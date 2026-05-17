@@ -1,8 +1,9 @@
 ---
 layout: page
 title: VenuMatch
-description: Agentic venue matching system built in ~5 hours — LangGraph + ChromaDB + FastAPI + React
-img: assets/img/projects/venumatch/thumb.jpg
+description: Agentic venue matching system using LangGraph, ChromaDB, FastAPI, and React/Vite.
+img: https://raw.githubusercontent.com/omrastogi/venumatch/main/ui_screen.png
+redirect: https://github.com/omrastogi/venumatch
 importance: 5
 category: industry
 ---
