@@ -67,7 +67,12 @@ ninja.data = [{
             },},{id: "news-a-simple-inline-announcement-with-markdown-emoji-sparkles-smile",
           title: 'A simple inline announcement with Markdown emoji! :sparkles: :smile:',
           description: "",
-          section: "News",},{id: "projects-adshot",
+          section: "News",},{id: "projects-adselect",
+          title: 'AdSelect',
+          description: "Fine-tuning multimodal LLMs for advertisement shot selection — a set-prediction approach to editing ads like professionals",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/0_adselect/";
+            },},{id: "projects-adshot",
           title: 'AdShot',
           description: "MLLM benchmark for advertisement video clipping — evaluating temporal reasoning at production scale",
           section: "Projects",handler: () => {
