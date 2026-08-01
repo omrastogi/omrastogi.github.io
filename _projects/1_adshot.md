@@ -2,7 +2,7 @@
 layout: page
 title: AdShot
 description: MLLM benchmark for advertisement video clipping — evaluating temporal reasoning at production scale
-img: assets/img/projects/adshot/thumb.jpg
+img: assets/img/projects/adshot/method.png
 importance: 1
 category: research
 ---
@@ -23,7 +23,9 @@ category: research
 
 ## Status
 
-Under review at **IJCAI 2026**.
+Under review at **NeurIPS 2026**.
+
+Follow-up work: [**AdSelect**]({{ '/projects/0_adselect/' | relative_url }}) — a fine-tuned MLLM method for ad shot selection built on this benchmark.
 
 **Venue:** Augmented Cognition Lab, Northeastern University
 **Advisor:** Prof. Sarah Ostadabbas
@@ -32,7 +34,12 @@ Under review at **IJCAI 2026**.
 
 Python · PyTorch · Qwen-Omni · MiniCPM-o · Aria · SLURM (Northeastern Discovery cluster)
 
-{% include figure.liquid loading="eager" path="assets/img/projects/adshot/thumb.jpg" title="AdShot benchmark overview" class="img-fluid rounded z-depth-1" %}
+{% include figure.liquid loading="eager" path="assets/img/projects/adshot/method.png" title="AdShot evaluation pipeline" class="img-fluid rounded z-depth-1" %}
 <div class="caption">
-  Placeholder — add benchmark overview figure here.
+  AdShot inference and evaluation pipeline for MLLM video clipping.
+</div>
+
+{% include figure.liquid loading="eager" path="assets/img/projects/adshot/table.png" title="AdShot benchmark results" class="img-fluid rounded z-depth-1" %}
+<div class="caption">
+  Benchmark results across evaluated MLLMs.
 </div>
