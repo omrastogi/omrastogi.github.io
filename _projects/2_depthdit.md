@@ -2,7 +2,7 @@
 layout: page
 title: DepthDiT
 description: Diffusion Transformer for monocular depth estimation — adapting PixArt-Alpha and PixArt-Sigma for dense prediction
-img: assets/img/projects/depthdit/thumb.jpg
+img: assets/img/projects/depthdit/comparison.png
 importance: 2
 category: research
 ---
@@ -39,7 +39,7 @@ Implemented **DreamBooth** and **RealFill**-inspired inpainting workflows to imp
 
 Python · PyTorch · PixArt-Alpha · PixArt-Sigma · MatrixCity · DreamBooth · RealFill
 
-{% include figure.liquid loading="eager" path="assets/img/projects/depthdit/thumb.jpg" title="DepthDiT depth prediction examples" class="img-fluid rounded z-depth-1" %}
+{% include figure.liquid loading="eager" path="assets/img/projects/depthdit/comparison.png" title="DepthDiT depth prediction examples" class="img-fluid rounded z-depth-1" %}
 <div class="caption">
-  Placeholder — add depth prediction qualitative results here.
+  Qualitative comparison against DepthAnything v2 and Lotus — DepthDiT (ours, right) on glass, netting, and specular surfaces.
 </div>
