@@ -2,7 +2,7 @@
 layout: page
 title: GVHMR Multi-Person Extension
 description: Extending global-frame human motion recovery to multi-person scenes for IARPA MOVES
-img: assets/img/projects/gvhmr/thumb.jpg
+img: assets/img/projects/gvhmr/gvhmr.png
 importance: 4
 category: research
 ---
@@ -32,7 +32,7 @@ Supporting an **IARPA MOVES pre-proposal** at the Augmented Cognition Lab, North
 
 Python · PyTorch · GVHMR · SMPL · YOLO · Visual Odometry · SLURM
 
-{% include figure.liquid loading="eager" path="assets/img/projects/gvhmr/thumb.jpg" title="Multi-person SMPL mesh overlay" class="img-fluid rounded z-depth-1" %}
+{% include figure.liquid loading="eager" path="assets/img/projects/gvhmr/gvhmr.png" title="Multi-person SMPL mesh overlay" class="img-fluid rounded z-depth-1" %}
 <div class="caption">
-  Placeholder — add multi-person mesh overlay visualization here.
+  Multi-person SMPL mesh recovery — two individuals reconstructed simultaneously in a consistent global frame, with side views.
 </div>
