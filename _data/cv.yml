@@ -6,6 +6,7 @@ cv:
   summary: >
     MS student in Artificial Intelligence at Northeastern University, Khoury College of Computer Sciences.
     Research interests in multimodal ML, computer vision, and diffusion-based generative models.
+    Seeking Fall 2026 co-op opportunities.
 
   social_networks:
     - network: GitHub
@@ -41,9 +42,16 @@ cv:
         position: Graduate Research Assistant
         location: Boston, MA
         start_date: 2025-09-01
-        summary: Research on multimodal ML, video understanding, and human motion estimation.
+        summary: Research on multimodal ML, video understanding, and human motion estimation, under the supervision of Prof. Sarah Ostadabbas.
         highlights:
-          - Building AdShot benchmark evaluating MLLMs on advertisement video clipping (30s → 15s); 823 video pairs, 194 brands; under review at IJCAI 2026.
+          - Built AdSelect, a 4,800-pair long-short advertisement dataset mined from ~4M YouTube videos across 17 industries, with a stratified 800-pair benchmark; first paired ad resource large enough to train rather than only evaluate MLLMs on shot selection.
+          - Formulated ad clipping as a set-prediction problem and developed AdCraft, a LoRA fine-tuning method (Qwen3-VL-8B, rank-512) with complement-shot supervision that injects explicit negative signal to curb over-selection.
+          - Established a supervised fine-tuning spine (LoRA SFT, rank-512) reaching 0.756 precision / 0.667 IoU, then extended it with complement-shot supervision to 0.771 precision / 0.688 IoU with ~1s duration error, identifying LoRA rank as the primary lever on precision and IoU.
+          - Surpassed every zero-shot open/frontier model (incl. GPT-5.6-sol) and prior supervised method on the primary metrics.
+          - Evaluated SFT and RL-based fine-tuning (GRPO via TRL); found greedy selection with complement supervision outperformed RL optimization.
+          - Ran a systematic zero-shot evaluation of 15+ MLLMs (7B–72B, open, audio-visual, and frontier), showing recall-driven metrics mask over-selection and that scale alone does not solve the task.
+          - "Engineered the full data pipeline: shot boundary detection, Swin3D embeddings, DBSCAN clustering, and cross-duration shot matching."
+          - First-author paper submitted to AAAI 2027; co-authored companion benchmark (AdShot) submitted to NeurIPS 2026 Datasets & Benchmarks track.
           - Extending GVHMR to multi-person scenarios using scene detection, Visual Odometry patching, SMPL mesh overlay rendering, and YOLO tracking on Northeastern Discovery cluster (SLURM).
           - Supporting IARPA MOVES pre-proposal at the Augmented Cognition Lab.
 
