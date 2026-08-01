@@ -2,7 +2,7 @@
 layout: page
 title: Production Diffusion Pipelines at Dashtoon
 description: Flux LoRA adapters for 20+ characters, Hidream-l1 MoE integration, Bollywood bias mitigation, and Google Veo 2 evaluation
-img: assets/img/projects/dashtoon/thumb.jpg
+img: assets/img/projects/dashtoon/thumb.png
 importance: 6
 category: industry
 ---
@@ -36,7 +36,7 @@ As a **Research Engineer at Dashtoon** (Mar 2025 – Aug 2025), I built and ship
 
 Python · PyTorch · Flux · LoRA · Hidream-l1 (MoE) · Google Veo 2 · GCP · FP16 · Diffusion Models
 
-{% include figure.liquid loading="eager" path="assets/img/projects/dashtoon/thumb.jpg" title="Dashtoon animated character pipeline" class="img-fluid rounded z-depth-1" %}
+{% include figure.liquid loading="eager" path="assets/img/projects/dashtoon/thumb.png" title="Flux Diffusion Transformer architecture" class="img-fluid rounded z-depth-1" %}
 <div class="caption">
-  Placeholder — add pipeline diagram or character generation samples here.
+  Flux Diffusion Transformer — the double/single-stream DiT backbone adapted for production LoRA character generation at 2048 resolution.
 </div>
