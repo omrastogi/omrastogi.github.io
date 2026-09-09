@@ -4,7 +4,7 @@ title: VenuMatch
 description: Agentic venue matching system using LangGraph, ChromaDB, FastAPI, and React/Vite.
 img: assets/img/projects/venumatch/thumb.png
 redirect: https://github.com/omrastogi/venumatch
-importance: 5
+importance: 6
 category: industry
 ---
 

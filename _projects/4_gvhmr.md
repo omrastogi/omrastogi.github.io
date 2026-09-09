@@ -3,7 +3,7 @@ layout: page
 title: GVHMR Multi-Person Extension
 description: Extending global-frame human motion recovery to multi-person scenes for IARPA MOVES
 img: assets/img/projects/gvhmr/gvhmr.png
-importance: 4
+importance: 5
 category: research
 ---
 

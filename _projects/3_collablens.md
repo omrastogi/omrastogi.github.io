@@ -3,7 +3,7 @@ layout: page
 title: Production CV Deployments at Collablens
 description: Built and deployed computer vision systems for ITC freight monitoring and Smartivity defect detection
 img: assets/img/projects/collablens/thumb.jpg
-importance: 3
+importance: 4
 category: industry
 ---
 

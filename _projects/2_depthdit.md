@@ -3,7 +3,7 @@ layout: page
 title: DepthDiT
 description: Diffusion Transformer for monocular depth estimation — adapting PixArt-Alpha and PixArt-Sigma for dense prediction
 img: assets/img/projects/depthdit/comparison.png
-importance: 2
+importance: 3
 category: research
 ---
 
