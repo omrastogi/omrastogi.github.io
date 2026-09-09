@@ -104,7 +104,7 @@ ninja.data = [{
               window.location.href = "/projects/archive/6_dashtoon/";
             },},{id: "projects-robin",
           title: 'Robin',
-          description: "Home voice assistant — a streaming speech pipeline (VAD → STT → LLM → TTS) on a self-hosted server, driving an Android tablet companion over WebRTC",
+          description: "Voice assistant for a post-operative care study — &quot;Hey Robin&quot; on an Android tablet, a Parakeet → LLM → Kokoro cascade on a self-hosted GPU server, joined by one WebSocket",
           section: "Projects",handler: () => {
               window.location.href = "/projects/robin/";
             },},{id: "teachings-data-science-fundamentals",
