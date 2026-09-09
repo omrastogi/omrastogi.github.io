@@ -20,7 +20,11 @@ category: research
 
 ## Architecture
 
-Three tiers, drawn as edge → server → LLM:
+{% include figure.liquid loading="eager" path="assets/img/projects/robin/architecture.png" title="Robin voice assistant architecture" class="img-fluid rounded z-depth-1" %}
+<div class="caption">
+  Edge → server → LLM. Solid lines carry audio, dashed lines carry control, red lines cross the network. The two dashed boxes — the on-device wake word and the cached acknowledgement clips — were planned when this was drawn and have since shipped.
+</div>
+
 
 - **Tablet (edge)** — an always-on **openWakeWord** detector listens for "Hey Robin" behind the hardware echo canceller. A detection arms a turn and 16 kHz PCM streams up over a WebSocket only while the turn is open; the detector keeps running during Robin's reply, which is how barge-in works. Timers and alarms ring locally on the device.
 - **Server (FastAPI · GPU)** — the cascade. **Silero VAD** decides end-of-utterance, with hysteresis, onset debounce, a pre-speech ring buffer so first syllables aren't clipped, and a hangover tuned against post-op patients who pause mid-sentence. Then **Parakeet TDT 1.1B** speech-to-text (chosen over 0.6B after a benchmark on 210 logged utterances: faster, and better on the words that matter, like "alarm") → LLM → **Kokoro-82M** text-to-speech, streamed back down the same socket as one 24 kHz WAV per sentence, all three models resident on one GPU. Barge-in cancels the in-flight reply. Per-user profiles (voice, speech rate, timezone, free-form context injected into the prompt) and every turn persist in Postgres behind per-device auth tokens, with a care-partner dashboard API over the history. Proactive events arrive over an HTTP endpoint from outside services and are spoken into the live session or queued for the device's next connect. Weather answers come from live open-meteo data pulled into the prompt, not the model's memory. Every turn is instrumented from turn-start to first TTS frame.
