@@ -1,6 +1,19 @@
 ---
 ---
 
+@inproceedings{bhatia2026motionblind,
+  bibtex_show = {true},
+  title       = {MotionBlind: Probing the Illusion of Motion Understanding in Video-LLMs},
+  author      = {Bhatia, Dhairya and Galoaa, Bishoy and Fritsche, Oliver and Kamal, Shahid and Abdul Salam, Muhammad Obaidullah and Saleem, Umer and Rastogi, Om and Chettiar, Frania Felix and Erdoğmuş, Nesli and Ostadabbas, Sarah},
+  booktitle   = {Under review, NeurIPS 2026 Workshop on World Models in Physical AI},
+  year        = {2026},
+  website     = {https://ostadabbas.github.io/motionblind.github.io/},
+  code        = {https://github.com/ostadabbas/MotionBlind},
+  preview     = {motionblind.png},
+  abstract    = {A video large language model can watch two clips of the same person in the same room and name every object in both, yet fail to tell you which one moves faster, which way a hand travels, or how hard a door is shut. That gap matters because Video-LLMs are increasingly the perceptual front end of world models: auto-labeling state transitions, acting as reward and success detectors for model-based RL, grounding instructions in what an agent sees. Each of those roles presupposes a competence at reading motion that, we show, these models do not have. MotionBlind is a contrastive, minimal-pairs benchmark of self-recorded clip pairs that are near-identical except in motion, each paired with two complementary yes/no questions, so a model must answer all four items correctly (Instance Accuracy, I_Acc) to score the instance. Single-frame, appearance and language-only shortcuts all collapse toward the 6.25% chance floor. It complements TimeBlind with physically grounded categories (speed, magnitude, direction) that are hard to source and label from uncontrolled internet video but are precisely the variables a world model must predict. Across two suites we run a controlled study of six open Video-LLMs and two frontier models over frame budgets 1-24 and four frame-selection strategies. Open models sit near the chance floor; a larger model does no better; and neither more frames nor dynamic selection, which changes which frames are seen and not whether motion is read, closes the gap. The task genuinely needs video in the right order: removing it zeroes every model, and shuffling frames collapses accuracy to chance. Only Gemini 3.1 Pro clears the benchmark overall, yet it too fails on the purely rate-defined categories.},
+  selected    = {true}
+}
+
 @article{rastogi2026adselect,
   bibtex_show = {true},
   title       = {AdSelect: Fine-Tuning Multimodal LLMs for Advertisement Shot Selection},
