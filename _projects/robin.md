@@ -44,16 +44,18 @@ The "Hey Robin" head is custom-trained on openWakeWord: a ~200k-parameter classi
 
 ## Demo
 
+{% assign demo1_poster = '/assets/img/projects/robin/demo1_poster.jpg' | relative_url %}
+{% assign demo2_poster = '/assets/img/projects/robin/demo2_poster.jpg' | relative_url %}
 <div class="row align-items-center justify-content-center">
     <div class="col-md-4 mt-3 mt-md-0">
-        {% include video.liquid path="assets/img/projects/robin/demo1.mp4" class="rounded z-depth-1" width="100%" controls=true muted=true autoplay=true %}
+        {% include video.liquid path="assets/img/projects/robin/demo1.mp4" poster=demo1_poster class="rounded z-depth-1" width="100%" controls=true %}
     </div>
     <div class="col-md-8 mt-3 mt-md-0">
-        {% include video.liquid path="assets/img/projects/robin/demo2.mp4" class="rounded z-depth-1" width="100%" controls=true muted=true autoplay=true %}
+        {% include video.liquid path="assets/img/projects/robin/demo2.mp4" poster=demo2_poster class="rounded z-depth-1" width="100%" controls=true %}
     </div>
 </div>
 <div class="caption">
-  Left: a server-opened proactive turn — "the fridge door is left open" — followed by a spoken exchange. Right: a live conversation — small talk, a weather question, a two-minute timer. Unmute for audio.
+  Left: a server-opened proactive turn — "the fridge door is left open" — followed by a spoken exchange. Right: a live conversation — small talk, a weather question, a two-minute timer. Audio on — press play.
 </div>
 
 ## Status
