@@ -81,9 +81,13 @@
           }
         }
 
+        em {
+          font-weight: bold;
+          font-style: normal;
+        }
+
         > em {
           border-bottom: 1px solid;
-          font-style: normal;
         }
 
         > span.more-authors {
