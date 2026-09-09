@@ -44,18 +44,25 @@ The "Hey Robin" head is custom-trained on openWakeWord: a ~200k-parameter classi
 
 ## Demo
 
-{% assign demo1_poster = '/assets/img/projects/robin/demo1_poster.jpg' | relative_url %}
-{% assign demo2_poster = '/assets/img/projects/robin/demo2_poster.jpg' | relative_url %}
-<div class="row align-items-center justify-content-center">
-    <div class="col-md-4 mt-3 mt-md-0">
-        {% include video.liquid path="assets/img/projects/robin/demo1.mp4" poster=demo1_poster class="rounded z-depth-1" width="100%" controls=true %}
-    </div>
-    <div class="col-md-8 mt-3 mt-md-0">
-        {% include video.liquid path="assets/img/projects/robin/demo2.mp4" poster=demo2_poster class="rounded z-depth-1" width="100%" controls=true %}
+{% assign video1_poster = '/assets/img/projects/robin/video1_poster.jpg' | relative_url %}
+{% assign video2_poster = '/assets/img/projects/robin/video2_poster.jpg' | relative_url %}
+
+<div class="row justify-content-center">
+    <div class="col-md-5">
+        {% include video.liquid path="assets/img/projects/robin/video1.mp4" poster=video1_poster class="rounded z-depth-1" width="100%" controls=true %}
     </div>
 </div>
 <div class="caption">
-  Left: an event pushed to the server — "the fridge door is left open" — spoken as a proactive turn, followed by a conversation. Right: a live conversation — small talk, a weather question, a two-minute timer. Audio on — press play.
+  Video 1 — an event pushed to the server, "the fridge door is left open", spoken as a proactive turn, followed by a conversation. Audio on, press play.
+</div>
+
+<div class="row justify-content-center mt-4">
+    <div class="col-md-8">
+        {% include video.liquid path="assets/img/projects/robin/video2.mp4" poster=video2_poster class="rounded z-depth-1" width="100%" controls=true %}
+    </div>
+</div>
+<div class="caption">
+  Video 2 — a live conversation: small talk, a weather question, a two-minute timer. Audio on, press play.
 </div>
 
 ## Status
