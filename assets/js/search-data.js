@@ -60,6 +60,11 @@ ninja.data = [{
           description: "Agentic venue matching system using LangGraph, ChromaDB, FastAPI, and React/Vite.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/5_venumatch/";
+            },},{id: "projects-lidar-imu-fusion-odometry",
+          title: 'LiDAR-IMU Fusion Odometry',
+          description: "Point-to-plane ICP fused with IMU preintegration in a 15-state error-state Kalman filter, scored against GPS ground truth on KITTI",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/7_lidar_imu_fusion/";
             },},{id: "projects-production-diffusion-pipelines-at-dashtoon",
           title: 'Production Diffusion Pipelines at Dashtoon',
           description: "Flux LoRA adapters for 20+ characters, Hidream-l1 MoE integration, Bollywood bias mitigation, and Google Veo 2 evaluation",
