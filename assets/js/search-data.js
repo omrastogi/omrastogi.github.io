@@ -72,7 +72,7 @@ ninja.data = [{
               window.location.href = "/projects/archive/6_dashtoon/";
             },},{id: "projects-robin",
           title: 'Robin',
-          description: "Voice assistant for a post-operative care study — &quot;Hey Robin&quot; on an Android tablet, a Parakeet → LLM → Kokoro cascade on a self-hosted GPU server, joined by one WebSocket",
+          description: "All in-house voice assistant for AI-CARING at Northeastern&#39;s PARCS Lab — runs on any tablet in the home, &quot;Hey Robin&quot; wake word, a Parakeet → LLM → Kokoro cascade on a self-hosted GPU server, joined by one WebSocket",
           section: "Projects",handler: () => {
               window.location.href = "/projects/robin/";
             },},{id: "teachings-data-science-fundamentals",
