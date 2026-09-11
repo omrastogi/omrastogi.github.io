@@ -5,7 +5,7 @@ description: Point-to-plane ICP fused with IMU preintegration in a 15-state erro
 img: assets/img/projects/lidar_imu_fusion/thumb.png
 github: https://github.com/omrastogi/lidar-imu-fusion-odometry
 importance: 7
-category: course
+category: coursework
 ---
 
 Course project for **EECE 5554 Robotics Sensing & Navigation** (Northeastern, Spring 2026, Group 5). Track a vehicle's position and orientation over time using only onboard sensors, no GPS. Two sensors with opposite failure modes: LiDAR gives accurate geometry but only 10 times a second and is ambiguous in featureless places; the IMU is fast but its errors compound quadratically. The filter combines them.
