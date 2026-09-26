@@ -6,7 +6,7 @@ cv:
   summary: >
     MS student in Artificial Intelligence at Northeastern University, Khoury College of Computer Sciences.
     Research interests in multimodal ML, computer vision, and diffusion-based generative models.
-    Seeking Fall 2026 co-op opportunities.
+    Seeking Summer 2027 research and engineering internships and full-time roles.
 
   social_networks:
     - network: GitHub
@@ -51,7 +51,7 @@ cv:
           - Evaluated SFT and RL-based fine-tuning (GRPO via TRL); found greedy selection with complement supervision outperformed RL optimization.
           - Ran a systematic zero-shot evaluation of 15+ MLLMs (7B–72B, open, audio-visual, and frontier), showing recall-driven metrics mask over-selection and that scale alone does not solve the task.
           - "Engineered the full data pipeline: shot boundary detection, Swin3D embeddings, DBSCAN clustering, and cross-duration shot matching."
-          - First-author paper submitted to AAAI 2027; co-authored companion benchmark (AdShot) submitted to NeurIPS 2026 Datasets & Benchmarks track.
+          - First-author paper submitted to AAAI 2027; co-authored companion benchmark (AdShot) accepted at NeurIPS 2026 Datasets & Benchmarks track.
           - Extending GVHMR to multi-person scenarios using scene detection, Visual Odometry patching, SMPL mesh overlay rendering, and YOLO tracking on Northeastern Discovery cluster (SLURM).
           - Supporting IARPA MOVES pre-proposal at the Augmented Cognition Lab.
 

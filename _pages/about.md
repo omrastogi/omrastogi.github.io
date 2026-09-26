@@ -24,4 +24,4 @@ I am an MS student in Artificial Intelligence at [Northeastern University's Khou
 
 Before Northeastern, I spent 8 months at the [Vision and AI Lab at IISc](https://val.cds.iisc.ac.in/) developing diffusion-based monocular depth estimation, 6 months at [Dashtoon](https://dashtoon.com/) shipping production diffusion pipelines for animated character generation, over a year at Collablens building deployed computer vision systems for Indian manufacturing lines, and a year and a half at EZ Works developing neural machine translation and document intelligence pipelines.
 
-I am actively seeking **Summer 2026** research and engineering internships.
+I am actively seeking **Summer 2027** research and engineering internships, as well as **full-time** roles.

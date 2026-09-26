@@ -23,7 +23,7 @@ category: research
 
 ## Status
 
-Under review at **NeurIPS 2026**.
+Accepted at **NeurIPS 2026** (Datasets & Benchmarks Track).
 
 Follow-up work: [**AdSelect**]({{ '/projects/0_adselect/' | relative_url }}) — a fine-tuned MLLM method for ad shot selection built on this benchmark.
 
