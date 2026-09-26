@@ -27,6 +27,7 @@ category: industry
 Python · LangGraph · ChromaDB · FastAPI · React · Vite · Railway · Vercel
 
 {% include figure.liquid loading="eager" path="assets/img/projects/venumatch/thumb.jpg" title="VenuMatch interface" class="img-fluid rounded z-depth-1" %}
+
 <div class="caption">
   Placeholder — add UI screenshot here.
 </div>

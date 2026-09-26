@@ -33,6 +33,7 @@ Supporting an **IARPA MOVES pre-proposal** at the Augmented Cognition Lab, North
 Python · PyTorch · GVHMR · SMPL · YOLO · Visual Odometry · SLURM
 
 {% include figure.liquid loading="eager" path="assets/img/projects/gvhmr/gvhmr.png" title="Multi-person SMPL mesh overlay" class="img-fluid rounded z-depth-1" %}
+
 <div class="caption">
   Multi-person SMPL mesh recovery — two individuals reconstructed simultaneously in a consistent global frame, with side views.
 </div>

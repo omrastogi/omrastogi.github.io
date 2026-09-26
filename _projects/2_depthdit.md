@@ -23,7 +23,7 @@ category: research
 ## Results
 
 | Metric | Value |
-|--------|-------|
+| ------ | ----- |
 | AbsRel | 0.107 |
 | δ1     | 0.88  |
 | Steps  | 40k   |
@@ -40,6 +40,7 @@ Implemented **DreamBooth** and **RealFill**-inspired inpainting workflows to imp
 Python · PyTorch · PixArt-Alpha · PixArt-Sigma · MatrixCity · DreamBooth · RealFill
 
 {% include figure.liquid loading="eager" path="assets/img/projects/depthdit/comparison.png" title="DepthDiT depth prediction examples" class="img-fluid rounded z-depth-1" %}
+
 <div class="caption">
   Qualitative comparison against DepthAnything v2 and Lotus — DepthDiT (ours, right) on glass, netting, and specular surfaces.
 </div>

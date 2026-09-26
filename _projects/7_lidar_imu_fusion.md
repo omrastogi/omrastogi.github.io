@@ -13,6 +13,7 @@ Course project for **EECE 5554 Robotics Sensing & Navigation** (Northeastern, Sp
 **One-line version:** ICP measures motion between scans, the IMU fills in the gaps and warm-starts the matching, and an error-state Kalman filter blends them into a single trajectory scored against GPS ground truth.
 
 {% include figure.liquid loading="eager" path="assets/img/projects/lidar_imu_fusion/trajectory_comparison.png" title="Trajectory comparison on KITTI 00, 01, 04" class="img-fluid rounded z-depth-1" %}
+
 <div class="caption">
   LiDAR-only, IMU-only and fused trajectories against OXTS ground truth on KITTI sequences 00 (urban loop), 01 (highway) and 04 (straight road).
 </div>
@@ -52,7 +53,7 @@ Final position error against OXTS ground truth:
 
 The first fused run drifted far worse than ICP alone. Two defects were isolated by testing each hypothesis independently and rescoring EKF-only reruns against ground truth:
 
-1. **Absolute-position covariance collapse.** ICP produces a *relative* pose, but the measurement Jacobian mapped it onto the absolute position error state. Every update compressed the position covariance toward the measurement noise and the Kalman gain decayed monotonically, so ICP could no longer correct accumulating IMU velocity and bias error. Fix: floor the position covariance diagonal before each update. A stochastic-cloning or sliding-window formulation is the principled long-term fix.
+1. **Absolute-position covariance collapse.** ICP produces a _relative_ pose, but the measurement Jacobian mapped it onto the absolute position error state. Every update compressed the position covariance toward the measurement noise and the Kalman gain decayed monotonically, so ICP could no longer correct accumulating IMU velocity and bias error. Fix: floor the position covariance diagonal before each update. A stochastic-cloning or sliding-window formulation is the principled long-term fix.
 2. **Wrong SE(3) inverse of the ICP measurement.** The update used `−t` instead of `−Rᵀt`, dropping the rotation. Negligible on straight roads, about 200 m of error on the high-speed highway sequence.
 
 After the fix the fused filter tracks ICP-only closely on both sequences. It does not beat it: the remaining gap is the relative-measurement problem above, which a covariance floor only patches.
