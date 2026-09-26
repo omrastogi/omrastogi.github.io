@@ -35,11 +35,13 @@ Follow-up work: [**AdSelect**]({{ '/projects/0_adselect/' | relative_url }}) —
 Python · PyTorch · Qwen-Omni · MiniCPM-o · Aria · SLURM (Northeastern Discovery cluster)
 
 {% include figure.liquid loading="eager" path="assets/img/projects/adshot/method.png" title="AdShot evaluation pipeline" class="img-fluid rounded z-depth-1" %}
+
 <div class="caption">
   AdShot inference and evaluation pipeline for MLLM video clipping.
 </div>
 
 {% include figure.liquid loading="eager" path="assets/img/projects/adshot/table.png" title="AdShot benchmark results" class="img-fluid rounded z-depth-1" %}
+
 <div class="caption">
   Benchmark results across evaluated MLLMs.
 </div>
