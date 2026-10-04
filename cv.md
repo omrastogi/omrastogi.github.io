@@ -143,7 +143,7 @@ Om Rastogi is an MS student in Artificial Intelligence at Northeastern Universit
 1. Wen Xie, Om Rastogi, Sai Siddhartha Vivek Dhir Rangoju, Gijs Overgoor, Yakov Bart, Sarah Ostadabbas. "AdShot: A Benchmark for Advertisement Video Clipping with Multimodal LLMs." NeurIPS 2026 Datasets and Benchmarks Track, 2026.
 2. Dhairya Bhatia, Bishoy Galoaa, Oliver Fritsche, Shahid Kamal, Muhammad Obaidullah Abdul Salam, Umer Saleem, Om Rastogi, Frania Felix Chettiar, Nesli Erdoğmuş, Sarah Ostadabbas. "MotionBlind: Probing the Illusion of Motion Understanding in Video-LLMs." Under review, NeurIPS 2026 Workshop on World Models in Physical AI, 2026.
 3. Om Rastogi. "Enhancing Pretrained Machine Translation Models: A Literature Review." Preprint, Zenodo, 2025. DOI: 10.5281/zenodo.14649605.
-4. Om Rastogi and others. "Color Masking Method for Variable Luminosity in Videos with Application in Lane Detection Systems." Proceedings of International Conference on Machine Intelligence and Data Science Applications, Springer, 2021. DOI: 10.1007/978-981-33-4087-9_24.
+4. Om Rastogi. "Color Masking Method for Variable Luminosity in Videos with Application in Lane Detection Systems." Proceedings of International Conference on Machine Intelligence and Data Science Applications, Springer, 2021. DOI: 10.1007/978-981-33-4087-9_24.
 
 ## Skills
 

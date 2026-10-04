@@ -11,7 +11,7 @@ Before Northeastern, Om worked in industry and research labs in India on diffusi
 - [DepthDiT](https://omrastogi.github.io/projects/2_depthdit/): Om trained a Diffusion Transformer for monocular depth estimation at the IISc Vision and AI Lab, adapting PixArt-Alpha and PixArt-Sigma backbones, curating 30,000 MatrixCity images, and designing a masked diffusion loss for reflective surfaces. Best checkpoint: AbsRel 0.107, δ1 0.88 at 40k steps.
 - [Robin](https://omrastogi.github.io/projects/robin/): Om built the full system for an in-house voice assistant for AI-CARING at Northeastern's PARCS Lab: the server speech cascade, the tablet app, the WebSocket protocol, and the custom "Hey Robin" wake word.
 - [GVHMR Multi-Person Extension](https://omrastogi.github.io/projects/4_gvhmr/): Om is extending GVHMR global-frame human mesh recovery to multi-person scenes, supporting an IARPA MOVES pre-proposal at the Augmented Cognition Lab.
-- [Color Masking Method for Variable Luminosity in Videos with Application in Lane Detection Systems](https://link.springer.com/chapter/10.1007/978-981-33-4087-9_24): First author. Springer, Proceedings of International Conference on Machine Intelligence and Data Science Applications, 2021.
+- [Color Masking Method for Variable Luminosity in Videos with Application in Lane Detection Systems](https://link.springer.com/chapter/10.1007/978-981-33-4087-9_24): Sole author. Springer, Proceedings of International Conference on Machine Intelligence and Data Science Applications, 2021.
 - [Enhancing Pretrained Machine Translation Models: A Literature Review](https://zenodo.org/records/14649605): Sole author. Preprint on Zenodo, 2025.
 - [All publications](https://omrastogi.github.io/publications/): Full list with abstracts and BibTeX.
 
