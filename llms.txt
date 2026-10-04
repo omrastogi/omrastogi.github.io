@@ -1,0 +1,32 @@
+# Om Rastogi
+
+> Om Rastogi is an MS student in Artificial Intelligence at Northeastern University (Khoury College of Computer Sciences), working in the Augmented Cognition Lab under Prof. Sarah Ostadabbas on multimodal LLMs, video understanding, and diffusion models, and is seeking Summer 2027 internships and full-time roles.
+
+Before Northeastern, Om worked in industry and research labs in India on diffusion models, monocular depth estimation, production computer vision, and neural machine translation. The full CV in plain markdown is at https://omrastogi.github.io/cv.md.
+
+## Research
+
+- [AdShot: A Benchmark for Advertisement Video Clipping with Multimodal LLMs](https://omrastogi.github.io/projects/1_adshot/): Second author. Benchmark of 823 video pairs across 194 brands, accepted at the NeurIPS 2026 Datasets and Benchmarks Track. Om built the MLLM inference pipeline, designed the evaluation harness, and built AdNotator, the annotation system used to construct the ground truth.
+- [MotionBlind: Probing the Illusion of Motion Understanding in Video-LLMs](https://omrastogi.github.io/projects/motionblind/): Co-author (7th of 10 authors). Contrastive minimal-pairs benchmark showing that Video-LLMs fail to read speed, magnitude, and direction of motion. Under review at the NeurIPS 2026 Workshop on World Models in Physical AI.
+- [DepthDiT](https://omrastogi.github.io/projects/2_depthdit/): Om trained a Diffusion Transformer for monocular depth estimation at the IISc Vision and AI Lab, adapting PixArt-Alpha and PixArt-Sigma backbones, curating 30,000 MatrixCity images, and designing a masked diffusion loss for reflective surfaces. Best checkpoint: AbsRel 0.107, δ1 0.88 at 40k steps.
+- [Robin](https://omrastogi.github.io/projects/robin/): Om built the full system for an in-house voice assistant for AI-CARING at Northeastern's PARCS Lab: the server speech cascade, the tablet app, the WebSocket protocol, and the custom "Hey Robin" wake word.
+- [GVHMR Multi-Person Extension](https://omrastogi.github.io/projects/4_gvhmr/): Om is extending GVHMR global-frame human mesh recovery to multi-person scenes, supporting an IARPA MOVES pre-proposal at the Augmented Cognition Lab.
+- [Color Masking Method for Variable Luminosity in Videos with Application in Lane Detection Systems](https://link.springer.com/chapter/10.1007/978-981-33-4087-9_24): First author. Springer, Proceedings of International Conference on Machine Intelligence and Data Science Applications, 2021.
+- [Enhancing Pretrained Machine Translation Models: A Literature Review](https://zenodo.org/records/14649605): Sole author. Preprint on Zenodo, 2025.
+- [All publications](https://omrastogi.github.io/publications/): Full list with abstracts and BibTeX.
+
+## Experience
+
+- [Dashtoon](https://omrastogi.github.io/cv/): Research Engineer, Bengaluru, Mar 2025 to Aug 2025. Trained and shipped Flux LoRA adapters for 20+ characters across 8 animation styles, integrated Hidream-l1 (MoE) into the animated character pipeline, and curated a 10,000+ image Bollywood dataset to reduce regional bias.
+- [IISc Vision and AI Lab](https://omrastogi.github.io/projects/2_depthdit/): Project Associate, Bengaluru, Jan 2024 to Feb 2025. Trained DepthDiT for monocular depth estimation and built the MatrixCity data curation pipeline.
+- [Collablens (Menmitsu Private Limited)](https://omrastogi.github.io/projects/3_collablens/): Senior Research Engineer and founding member, Gurugram, Dec 2022 to Jan 2024. Deployed YOLO-based truck-loading monitoring for ITC with 70% rough-handling detection accuracy and <5% false positives, and a Smartivity defect detection system with 97% accuracy on missing-part detection.
+- [EZ Works](https://omrastogi.github.io/cv/): Data Scientist, Gurugram, Jul 2021 to Dec 2022. Fine-tuned Arabic-English neural machine translation models exceeding 50 BLEU and built a BERT-based translation memory with a 10x retrieval speedup.
+
+## Links
+
+- [CV (markdown)](https://omrastogi.github.io/cv.md): Plain-text CV, best for machine reading.
+- [CV (PDF)](https://omrastogi.github.io/assets/pdf/resume.pdf): Resume PDF.
+- [GitHub](https://github.com/omrastogi)
+- [Google Scholar](https://scholar.google.com/citations?user=BSiwOiMAAAAJ)
+- [LinkedIn](https://www.linkedin.com/in/om-rastogi-a886b4b2)
+- [Email](mailto:rastogi.o@northeastern.edu): rastogi.o@northeastern.edu
