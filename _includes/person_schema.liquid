@@ -1,0 +1,39 @@
+{% assign socials = site.data.socials %}
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "{{ site.first_name }} {{ site.last_name }}",
+    "url": {{ '/' | absolute_url | jsonify }},
+    "image": {{ '/assets/img/prof_pic.jpg' | absolute_url | jsonify }},
+    "jobTitle": "Applied AI Researcher",
+    "description": {{ site.description | strip | jsonify }},
+    "affiliation": {
+      "@type": "CollegeOrUniversity",
+      "name": "Northeastern University",
+      "department": { "@type": "Organization", "name": "Khoury College of Computer Sciences" }
+    },
+    "alumniOf": [
+      {
+        "@type": "CollegeOrUniversity",
+        "name": "Northeastern University",
+        "department": { "@type": "Organization", "name": "Khoury College of Computer Sciences" }
+      },
+      { "@type": "CollegeOrUniversity", "name": "JSS Academy of Technical Education" }
+    ],
+    "knowsAbout": [
+      "Multimodal Large Language Models",
+      "Video Understanding",
+      "Diffusion Models",
+      "Computer Vision",
+      "Monocular Depth Estimation",
+      "LoRA Fine-tuning"
+    ],
+    "sameAs": [
+      "https://github.com/{{ socials.github_username }}",
+      "https://www.linkedin.com/in/{{ socials.linkedin_username }}",
+      "https://scholar.google.com/citations?user={{ socials.scholar_userid }}",
+      "https://medium.com/@{{ socials.medium_username }}"
+    ]
+  }
+</script>

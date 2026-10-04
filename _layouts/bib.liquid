@@ -396,5 +396,32 @@
         <div style="text-align: center;">{% include video.liquid path=entry.video class="img-fluid rounded z-depth-1" controls=true %}</div>
       </div>
     {% endif %}
+
+    {% if site.serve_schema_org %}
+      <!-- Schema.org ScholarlyArticle -->
+      {% assign ld_venue = entry.journal | default: entry.booktitle %}
+      {% assign ld_url = entry.website | default: entry.html %}
+      <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "ScholarlyArticle",
+          "headline": {{ entry.title | jsonify }},
+          "author": [
+            {%- for author in entry.author_array -%}
+              {%- unless author.last == 'others' -%}
+                {%- capture ld_author -%}{{ author.first }} {{ author.last }}{%- endcapture -%}
+                {%- unless forloop.first %},{% endunless -%}
+                { "@type": "Person", "name": {{ ld_author | strip | jsonify }} }
+              {%- endunless -%}
+            {%- endfor -%}
+          ],
+          {% if ld_venue %}"isPartOf": { "@type": "CreativeWork", "name": {{ ld_venue | jsonify }} },{% endif %}
+          {% if ld_url %}"url": {{ ld_url | jsonify }},{% endif %}
+          {% if entry.doi %}"sameAs": {{ entry.doi | prepend: 'https://doi.org/' | jsonify }},{% endif %}
+          {% if entry.abstract %}"abstract": {{ entry.abstract | jsonify }},{% endif %}
+          "datePublished": {{ entry.year | jsonify }}
+        }
+      </script>
+    {% endif %}
   </div>
 </div>
