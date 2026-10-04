@@ -18,6 +18,7 @@ Om Rastogi is an MS student in Artificial Intelligence at Northeastern Universit
 ### Northeastern University, Boston, MA
 
 - Master of Science in Artificial Intelligence, Sep 2025 to Aug 2027.
+- GPA: 3.6/4.0.
 - Khoury College of Computer Sciences.
 - Affiliated with the Augmented Cognition Lab, advised by Prof. Sarah Ostadabbas.
 

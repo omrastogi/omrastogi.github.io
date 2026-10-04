@@ -23,6 +23,7 @@ cv:
         studyType: Master of Science
         start_date: 2025-09-01
         end_date: 2027-08-01
+        score: "GPA 3.6/4.0"
         highlights:
           - Khoury College of Computer Sciences
           - Affiliated with Augmented Cognition Lab, advised by Prof. Sarah Ostadabbas
