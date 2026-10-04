@@ -2,7 +2,7 @@
 layout: page
 title: projects
 permalink: /projects/
-description: A growing collection of your cool projects.
+description: Research, industry, and coursework projects by Om Rastogi in multimodal LLMs, diffusion models, and computer vision.
 nav: true
 nav_order: 3
 display_categories: [research, industry, coursework]

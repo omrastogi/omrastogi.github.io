@@ -1,6 +1,7 @@
 ---
 layout: about
 title: about
+description: Om Rastogi, MS in Artificial Intelligence at Northeastern University. Research on multimodal LLMs for video understanding, diffusion models, and computer vision.
 permalink: /
 subtitle: MS in Artificial Intelligence · Northeastern University · Khoury College of Computer Sciences
 

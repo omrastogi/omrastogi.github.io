@@ -2,6 +2,7 @@
 layout: default
 permalink: /blog/
 title: blog
+description: Writing by Om Rastogi on machine learning and research.
 nav: false
 nav_order: 1
 pagination:
