@@ -75,6 +75,11 @@ ninja.data = [{
           description: "All in-house voice assistant for AI-CARING at Northeastern&#39;s PARCS Lab — runs on any tablet in the home, &quot;Hey Robin&quot; wake word, a Parakeet → LLM → Kokoro cascade on a self-hosted GPU server, joined by one WebSocket",
           section: "Projects",handler: () => {
               window.location.href = "/projects/robin/";
+            },},{id: "projects-twinsee-at-c10-labs",
+          title: 'Twinsee at C10 Labs',
+          description: "Infant monitoring for Twinsee at C10 Labs — semi-supervised YOLO on pseudo-labelled video, infant posture classification, and a phone capture prototype that turns one recording into metric 3D, depth and camera trajectory",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/twinsee/";
             },},{id: "teachings-data-science-fundamentals",
           title: 'Data Science Fundamentals',
           description: "This course covers the foundational aspects of data science, including data collection, cleaning, analysis, and visualization. Students will learn practical skills for working with real-world datasets.",

@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang=en><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1">
+<title>Point cloud viewer</title>
+<style>
+:root{--bg:#f6f5f2;--fg:#1c1b19;--muted:#6b6862}
+@media (prefers-color-scheme:dark){:root{--bg:#121212;--fg:#ecebe8;--muted:#9c9890}}
+html,body{margin:0;height:100%;background:var(--bg);color:var(--fg);font:12.5px system-ui,sans-serif;overflow:hidden}
+#hud{position:absolute;left:10px;bottom:8px;color:var(--muted);pointer-events:none}
+#err{position:absolute;inset:0;display:none;place-items:center;color:var(--muted)}
+</style>
+<script type=importmap>{"imports":{"three":"./lib/three.module.js"}}</script>
+</head><body><div id=hud>loading…</div><div id=err></div>
+<script type=module>
+// cloud_view.html?src=<ply>&size=<point size m>&up=z|-y[&cam=x,y,z&look=x,y,z][&path=<json [[x,y,z],..]>]
+//   [&overlay=<ply>]  cam/look pin the view (same framing across clouds); path draws a reference camera path;
+//   overlay draws a reference cloud (e.g. ground truth) in the series-1 blue.
+import * as THREE from "three";
+// vertex colours are sRGB photo pixels: pass them through untouched (three would treat them as linear and wash out darks)
+THREE.ColorManagement.enabled = false;
+import { OrbitControls } from "./lib/OrbitControls.js";
+import { PLYLoader } from "./lib/PLYLoader.js";
+
+const q = new URLSearchParams(location.search);
+const src = q.get("src"), size = parseFloat(q.get("size") || "0.004"), up = q.get("up") || "z";
+const vec = (k) => q.get(k) ? q.get(k).split(",").map(Number) : null;
+const hud = document.getElementById("hud");
+const dark = matchMedia("(prefers-color-scheme: dark)").matches;
+
+const renderer = new THREE.WebGLRenderer({ antialias: true });
+renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
+renderer.outputColorSpace = THREE.LinearSRGBColorSpace;
+document.body.appendChild(renderer.domElement);
+const scene = new THREE.Scene();
+scene.background = new THREE.Color(dark ? 0x121212 : 0xf6f5f2);
+const camera = new THREE.PerspectiveCamera(50, 1, 0.01, 100);
+camera.up.set(...(up === "z" ? [0, 0, 1] : [0, -1, 0]));
+const controls = new OrbitControls(camera, renderer.domElement);
+controls.enableDamping = true;
+
+function resize() {
+  renderer.setSize(innerWidth, innerHeight);
+  camera.aspect = innerWidth / innerHeight;
+  camera.updateProjectionMatrix();
+}
+addEventListener("resize", resize);
+resize();
+
+new PLYLoader().load(src, (geo) => {
+  geo.computeBoundingBox();
+  const pos = geo.attributes.position.array;
+  // robust centre/extent: median and 2-98 % range per axis, so stray points don't set the view
+  const n = pos.length / 3, c = [], ext = [];
+  for (let a = 0; a < 3; a++) {
+    const v = new Float32Array(Math.ceil(n / 7));
+    for (let i = 0, j = 0; i < n; i += 7, j++) v[j] = pos[3 * i + a];
+    v.sort();
+    c.push(v[v.length >> 1]);
+    ext.push(v[Math.floor(v.length * 0.98)] - v[Math.floor(v.length * 0.02)]);
+  }
+  const r = Math.max(...ext);
+  const mat = new THREE.PointsMaterial({ size, vertexColors: !!geo.attributes.color, sizeAttenuation: true });
+  scene.add(new THREE.Points(geo, mat));
+  if (vec("cam") && vec("look")) {
+    controls.target.set(...vec("look"));
+    camera.position.set(...vec("cam"));
+  } else {
+    controls.target.set(...c);
+    const dir = up === "z" ? new THREE.Vector3(0.9, -1.1, 0.8) : new THREE.Vector3(0.6, -0.5, -1.2);
+    camera.position.copy(new THREE.Vector3(...c).add(dir.normalize().multiplyScalar(r * 1.3)));
+  }
+  controls.update();
+  hud.textContent = `${n.toLocaleString()} points · drag to orbit, scroll to zoom, right-drag to pan`;
+}, undefined, (e) => {
+  const el = document.getElementById("err");
+  el.style.display = "grid";
+  el.textContent = location.protocol === "file:" ? "Open this page through the local server (file:// cannot load 3D files)." : `Could not load ${src}`;
+  hud.textContent = "";
+});
+
+if (q.get("path")) fetch(q.get("path"), { cache: "no-store" }).then((r) => r.json()).then((pts) => {
+  const g = new THREE.BufferGeometry().setFromPoints(pts.map((p) => new THREE.Vector3(...p)));
+  scene.add(new THREE.Line(g, new THREE.LineBasicMaterial({ color: dark ? 0x3987e5 : 0x2a78d6 })));
+});
+
+if (q.get("overlay")) new PLYLoader().load(q.get("overlay"), (g) => {
+  scene.add(new THREE.Points(g, new THREE.PointsMaterial({ size: size * 0.8, color: dark ? 0x3987e5 : 0x2a78d6, sizeAttenuation: true })));
+});
+
+renderer.setAnimationLoop(() => { controls.update(); renderer.render(scene, camera); });
+</script></body></html>

@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang=en><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1">
+<title>MegaSaM phone viewer</title>
+<style>
+:root{color-scheme:dark;--bg:#16181c;--fg:#e4e6ea;--mute:#9aa0a8;--line:#33373e;--s3:#199e70}
+html,body{margin:0;height:100%}
+body{font:13px system-ui,sans-serif;color:var(--fg);background:var(--bg);display:flex;overflow:hidden}
+#c{flex:1;min-width:0;position:relative}
+#side{width:300px;border-left:1px solid var(--line);padding:10px;overflow:auto;box-sizing:border-box}
+#side img{width:100%;border-radius:4px;display:block;background:#000}
+button{background:#22262c;color:var(--fg);border:1px solid #4a4f58;border-radius:4px;padding:4px 10px;font:inherit}
+input[type=range]{width:100%}
+.meta{color:var(--mute);line-height:1.5;font-size:12px}
+.k{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:5px;vertical-align:-1px}
+table{border-collapse:collapse;width:100%;margin:6px 0}
+td{padding:3px 4px;border-bottom:1px solid var(--line)} td:last-child{text-align:right;font-variant-numeric:tabular-nums}
+canvas#spark{width:100%;height:60px;background:#0e0f12;border-radius:4px;display:block}
+body.video #side{display:none}
+</style>
+<script type=importmap>{"imports":{"three":"./lib/three.module.js"}}</script>
+</head><body>
+<div id=c></div>
+<div id=side>
+  <img id=im alt="">
+  <div style="display:flex;gap:8px;align-items:center;margin:8px 0 4px"><button id=play>&#9654;</button><span id=fl class=meta></span></div>
+  <input type=range id=fr min=0 max=0 value=0>
+  <table id=st></table>
+  <canvas id=spark></canvas>
+  <div class=meta style="margin:4px 0 10px">angle between the phone's gravity sensor and MegaSaM's "up", per frame</div>
+  <div class=meta>
+    <span class=k style="background:#fff"></span>phone (camera frustum), this frame<br>
+    <span class=k style="background:var(--s3)"></span>MegaSaM camera path so far<br>
+    <span class=k style="background:#ff5a4f"></span>phone gravity sensor, carried into the world by MegaSaM<br>
+    <span class=k style="background:#8a8f98"></span>true up (world z)<br>
+    points: MegaSaM depth of this frame, metres (phone stereo scale)
+  </div>
+  <div class=meta style="margin-top:8px">drag = orbit, right-drag = pan, wheel = zoom, &larr;/&rarr; = frame, space = play</div>
+</div>
+<script type=module>
+// megasam_view.html?data=megasam/view[&video=1&cam=x,y,z&look=x,y,z]
+// data/view.json: c2w (fixed, metres, z up), K, W, H, counts, t, up_phone, ang_deg; data/points.bin: xyz f32 then rgb u8;
+// data/frames/00000.jpg. video=1 hides the side panel and exposes window.setFrame(k) for scripted renders.
+import * as THREE from "three";
+// vertex colours are sRGB photo pixels: pass them through untouched (three would treat them as linear and wash out darks)
+THREE.ColorManagement.enabled = false;
+import { OrbitControls } from "./lib/OrbitControls.js";
+
+const q = new URLSearchParams(location.search), $ = (id) => document.getElementById(id);
+const D = q.get("data") || "megasam/view", video = q.get("video") === "1";
+if (video) document.body.classList.add("video");
+const V = await (await fetch(`${D}/view.json`, { cache: "no-store" })).json();
+const buf = await (await fetch(`${D}/points.bin`, { cache: "no-store" })).arrayBuffer();
+const N = V.counts.reduce((a, b) => a + b, 0);
+const xyz = new Float32Array(buf, 0, 3 * N), rgb = new Uint8Array(buf, 12 * N, 3 * N);
+const offs = [0]; V.counts.forEach((c) => offs.push(offs[offs.length - 1] + c));
+
+const host = $("c");
+const renderer = new THREE.WebGLRenderer({ antialias: true, preserveDrawingBuffer: true });
+renderer.setPixelRatio(video ? 1 : Math.min(devicePixelRatio, 2));
+renderer.outputColorSpace = THREE.LinearSRGBColorSpace;
+host.appendChild(renderer.domElement);
+const scene = new THREE.Scene();
+scene.background = new THREE.Color(0x121212);
+const camera = new THREE.PerspectiveCamera(45, 1, 0.01, 50);
+camera.up.set(0, 0, 1);
+const controls = new OrbitControls(camera, renderer.domElement);
+const vec = (k, d) => (q.get(k) || d).split(",").map(Number);
+camera.position.set(...vec("cam", "-0.299,0.444,0.708"));
+controls.target.set(...vec("look", "0.151,-0.261,-0.221"));
+controls.update();
+function resize() {
+  const w = host.clientWidth, h = host.clientHeight;
+  renderer.setSize(w, h); camera.aspect = w / h; camera.updateProjectionMatrix();
+}
+addEventListener("resize", resize); resize();
+
+const C = V.c2w.map((m) => new THREE.Vector3(m[0][3], m[1][3], m[2][3]));
+const pathGeo = new THREE.BufferGeometry().setFromPoints(C);
+scene.add(new THREE.Line(pathGeo, new THREE.LineBasicMaterial({ color: 0x199e70 })));
+const dyn = new THREE.Group(); scene.add(dyn);
+const hub = new THREE.Vector3(...vec("look", "0.151,-0.261,-0.221"));
+scene.add(new THREE.ArrowHelper(new THREE.Vector3(0, 0, 1), hub, 0.22, 0x8a8f98, 0.03, 0.015));
+
+function frustum(f, s) {
+  const m = V.c2w[f], K = V.K, T = (x, y, z) => new THREE.Vector3(
+    m[0][0] * x + m[0][1] * y + m[0][2] * z + m[0][3], m[1][0] * x + m[1][1] * y + m[1][2] * z + m[1][3], m[2][0] * x + m[2][1] * y + m[2][2] * z + m[2][3]);
+  const o = T(0, 0, 0);
+  const cs = [[0, 0], [V.W, 0], [V.W, V.H], [0, V.H]].map(([u, v]) => T((u - K[0][2]) / K[0][0] * s, (v - K[1][2]) / K[1][1] * s, s));
+  const p = []; cs.forEach((c, i) => p.push(o, c, c, cs[(i + 1) % 4]));
+  return new THREE.LineSegments(new THREE.BufferGeometry().setFromPoints(p), new THREE.LineBasicMaterial({ color: 0xffffff }));
+}
+function clear(g) { while (g.children.length) { const c = g.children.pop(); c.geometry && c.geometry.dispose(); } }
+
+function draw(f) {
+  clear(dyn);
+  const g = new THREE.BufferGeometry(), a = offs[f], n = V.counts[f];
+  g.setAttribute("position", new THREE.BufferAttribute(xyz.subarray(3 * a, 3 * (a + n)), 3));
+  g.setAttribute("color", new THREE.BufferAttribute(rgb.subarray(3 * a, 3 * (a + n)), 3, true));
+  dyn.add(new THREE.Points(g, new THREE.PointsMaterial({ size: 0.004, vertexColors: true })));
+  dyn.add(frustum(f, 0.07));
+  const up = new THREE.Vector3(...V.up_phone[f]);
+  dyn.add(new THREE.ArrowHelper(up, hub, 0.2, 0xff5a4f, 0.03, 0.015));
+  pathGeo.setDrawRange(0, f + 1);
+  if (!video) {
+    $("im").src = `${D}/frames/${String(f).padStart(5, "0")}.jpg`;
+    $("fl").textContent = `frame ${f + 1}/${V.frames} · ${V.t[f].toFixed(1)} s`;
+    $("fr").value = f;
+    $("st").innerHTML = [["phone gravity vs MegaSaM up", `${V.ang_deg[f].toFixed(1)}°`], ["median over the video", `${V.ang_median_deg.toFixed(1)}°`],
+      ["metric scale (phone stereo)", `×${V.scale.toFixed(3)}`]].map((r) => `<tr><td>${r[0]}</td><td>${r[1]}</td></tr>`).join("");
+    spark(f);
+  }
+}
+function spark(f) {
+  const c = $("spark"), x = c.getContext("2d"), w = (c.width = c.clientWidth * devicePixelRatio), h = (c.height = c.clientHeight * devicePixelRatio);
+  const mx = Math.max(5, ...V.ang_deg), X = (i) => (i / (V.frames - 1)) * w, Y = (v) => h - (v / mx) * (h - 6) - 3;
+  x.strokeStyle = "#ff5a4f"; x.lineWidth = 2 * devicePixelRatio; x.beginPath();
+  V.ang_deg.forEach((v, i) => (i ? x.lineTo(X(i), Y(v)) : x.moveTo(X(i), Y(v)))); x.stroke();
+  x.fillStyle = "#fff"; x.fillRect(X(f) - devicePixelRatio, 0, 2 * devicePixelRatio, h);
+  x.fillStyle = "#9aa0a8"; x.font = `${11 * devicePixelRatio}px system-ui`; x.fillText(`${mx.toFixed(0)}°`, 4, 12 * devicePixelRatio);
+}
+
+let cur = 0, playing = false, last = 0;
+window.setFrame = (f) => new Promise((res) => { cur = f; draw(f); controls.update(); renderer.render(scene, camera); requestAnimationFrame(() => res(f)); });
+$("fr").max = V.frames - 1;
+$("fr").oninput = (e) => window.setFrame(+e.target.value);
+$("play").onclick = () => { playing = !playing; $("play").innerHTML = playing ? "&#10074;&#10074;" : "&#9654;"; };
+addEventListener("keydown", (e) => {
+  if (e.key === "ArrowRight") window.setFrame(Math.min(V.frames - 1, cur + 1));
+  if (e.key === "ArrowLeft") window.setFrame(Math.max(0, cur - 1));
+  if (e.key === " ") { e.preventDefault(); $("play").click(); }
+});
+await window.setFrame(0);
+window.ready = true;
+renderer.setAnimationLoop((ts) => {
+  if (playing && ts - last > 133) { last = ts; draw((cur = (cur + 1) % V.frames)); }   // ~7.5 fps = the frames' real rate
+  controls.update(); renderer.render(scene, camera);
+});
+</script></body></html>
