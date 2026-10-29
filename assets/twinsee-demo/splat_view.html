@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang=en><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1">
+<title>Splat viewer</title>
+<style>
+:root{--bg:#f6f5f2;--muted:#6b6862}
+@media (prefers-color-scheme:dark){:root{--bg:#121212;--muted:#9c9890}}
+html,body{margin:0;height:100%;background:var(--bg);font:12.5px system-ui,sans-serif;overflow:hidden}
+#v{position:absolute;inset:0}
+#hud{position:absolute;left:10px;bottom:8px;color:var(--muted);pointer-events:none;z-index:2}
+</style>
+<script type=importmap>{"imports":{"three":"./lib/three.module.js"}}</script>
+</head><body><div id=v></div><div id=hud>loading splat…</div>
+<script type=module>
+// splat_view.html?src=<3DGS ply>&cam=x,y,z&look=x,y,z[&hud=0]   (world z = up, metres; window.viewer exposed for scripted renders)
+import * as GS from "./lib/gaussian-splats-3d.module.js";
+
+const q = new URLSearchParams(location.search);
+const vec = (k, d) => (q.get(k) || d).split(",").map(Number);
+const hud = document.getElementById("hud");
+addEventListener("error", (e) => { hud.textContent = "error: " + e.message; });
+addEventListener("unhandledrejection", (e) => { hud.textContent = "error: " + e.reason; });
+const viewer = new GS.Viewer({
+  rootElement: document.getElementById("v"),
+  cameraUp: [0, 0, 1],
+  initialCameraPosition: vec("cam", "0.6,-0.6,0.4"),
+  initialCameraLookAt: vec("look", "0,0,0"),
+  sharedMemoryForWorkers: false,   // no COOP/COEP headers on the local server
+  dynamicScene: false,
+  sphericalHarmonicsDegree: 2,
+});
+viewer.addSplatScene(q.get("src"), { format: q.get("src").endsWith(".splat") ? GS.SceneFormat.Splat : GS.SceneFormat.Ply, splatAlphaRemovalThreshold: 5, showLoadingUI: false, progressiveLoad: false })
+  .then(() => { viewer.start(); window.viewer = viewer; hud.textContent = q.get("hud") === "0" ? "" : "drag to orbit · scroll to zoom · right-drag to pan"; })
+  .catch((e) => { hud.textContent = location.protocol === "file:" ? "Open through the local server (file:// cannot load 3D files)." : "Could not load splat: " + e; });
+</script></body></html>

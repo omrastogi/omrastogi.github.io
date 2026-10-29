@@ -83,6 +83,14 @@ Om Rastogi is an MS student in Artificial Intelligence at Northeastern Universit
 
 ## Experience
 
+### ML/CV Graduate Co-op, C10 Labs
+
+- Boston, MA. Sep 2026 to present.
+- Built semi-supervised YOLO training on video frames from Grounding DINO, YOLO and ByteTrack pseudo-labels; precision 38% to 93%.
+- Built infant posture classification from DINO features, infant pose and the gravity direction estimated by GeoCalib.
+- Built a phone capture prototype (wide + ultrawide + IMU) and offline pipeline for metric SfM, stereo + Depth Pro depth fusion, Gaussian splatting, and MegaSaM trajectories rescaled with phone sensors (8.5 cm to 1.2 cm error).
+- Project page: https://omrastogi.github.io/projects/twinsee/
+
 ### Graduate Research Assistant, Augmented Cognition Lab, Northeastern University
 
 - Boston, MA. Sep 2025 to present.

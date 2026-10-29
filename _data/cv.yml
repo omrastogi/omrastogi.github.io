@@ -39,6 +39,15 @@ cv:
           - Creative Head at Quanta JSS; Member of EDC
 
     Experience:
+      - company: C10 Labs
+        position: ML/CV Graduate Co-op
+        location: Boston, MA
+        start_date: 2026-09-01
+        highlights:
+          - Built semi-supervised YOLO training on video frames from Grounding DINO, YOLO and ByteTrack pseudo-labels; precision 38% to 93%.
+          - Built infant posture classification from DINO features, infant pose and the gravity direction estimated by GeoCalib.
+          - Built a phone capture prototype (wide + ultrawide + IMU) and offline pipeline for metric SfM, stereo + Depth Pro depth fusion, Gaussian splatting, and MegaSaM trajectories rescaled with phone sensors (8.5 cm to 1.2 cm error).
+
       - company: Northeastern University — Augmented Cognition Lab
         position: Graduate Research Assistant
         location: Boston, MA
