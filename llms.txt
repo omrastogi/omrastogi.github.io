@@ -1,13 +1,13 @@
 # Om Rastogi
 
-> Om Rastogi is an MS student in Artificial Intelligence at Northeastern University (Khoury College of Computer Sciences), working in the Augmented Cognition Lab under Prof. Sarah Ostadabbas on multimodal LLMs, video understanding, and diffusion models, and is seeking Summer 2027 internships and full-time roles.
+> Om Rastogi is an MS student in Artificial Intelligence at Northeastern University (Khoury College of Computer Sciences), working in the Augmented Cognition Lab under Prof. Sarah Ostadabbas on motion perception, physical reasoning, and world models in video, and is applying to PhD programs for Fall 2027.
 
 Before Northeastern, Om worked in industry and research labs in India on diffusion models, monocular depth estimation, production computer vision, and neural machine translation. The full CV in plain markdown is at https://omrastogi.github.io/cv.md.
 
 ## Research
 
 - [AdShot: A Benchmark for Advertisement Video Clipping with Multimodal LLMs](https://omrastogi.github.io/projects/1_adshot/): Second author. Benchmark of 823 video pairs across 194 brands, accepted at the NeurIPS 2026 Datasets and Benchmarks Track. Om built the MLLM inference pipeline, designed the evaluation harness, and built AdNotator, the annotation system used to construct the ground truth.
-- [MotionBlind: Probing the Illusion of Motion Understanding in Video-LLMs](https://omrastogi.github.io/projects/motionblind/): Co-author (7th of 10 authors). Contrastive minimal-pairs benchmark showing that Video-LLMs fail to read speed, magnitude, and direction of motion. Under review at the NeurIPS 2026 Workshop on World Models in Physical AI.
+- [MotionBlind: Probing the Illusion of Motion Understanding in Video-LLMs](https://omrastogi.github.io/projects/motionblind/): Co-author (7th of 10 authors). Contrastive minimal-pairs benchmark showing that Video-LLMs fail to read speed, magnitude, and direction of motion. arXiv preprint: https://arxiv.org/abs/2609.09528.
 - [DepthDiT](https://omrastogi.github.io/projects/2_depthdit/): Om trained a Diffusion Transformer for monocular depth estimation at the IISc Vision and AI Lab, adapting PixArt-Alpha and PixArt-Sigma backbones, curating 30,000 MatrixCity images, and designing a masked diffusion loss for reflective surfaces. Best checkpoint: AbsRel 0.107, δ1 0.88 at 40k steps.
 - [Robin](https://omrastogi.github.io/projects/robin/): Om built the full system for an in-house voice assistant for AI-CARING at Northeastern's PARCS Lab: the server speech cascade, the tablet app, the WebSocket protocol, and the custom "Hey Robin" wake word.
 - [GVHMR Multi-Person Extension](https://omrastogi.github.io/projects/4_gvhmr/): Om is extending GVHMR global-frame human mesh recovery to multi-person scenes, supporting an IARPA MOVES pre-proposal at the Augmented Cognition Lab.

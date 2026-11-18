@@ -11,7 +11,7 @@ MS in Artificial Intelligence, Northeastern University, Boston, MA.
 
 ## Summary
 
-Om Rastogi is an MS student in Artificial Intelligence at Northeastern University, Khoury College of Computer Sciences. Om works in the Augmented Cognition Lab, advised by Prof. Sarah Ostadabbas. Om's research interests are multimodal LLMs, video understanding, computer vision, and diffusion-based generative models. Om is seeking Summer 2027 research and engineering internships and full-time roles.
+Om Rastogi is an MS student in Artificial Intelligence at Northeastern University, Khoury College of Computer Sciences. Om works in the Augmented Cognition Lab, advised by Prof. Sarah Ostadabbas. Om's research interests are motion perception, physical reasoning, and world models in video. Om is applying to PhD programs for Fall 2027.
 
 ## Education
 
@@ -46,7 +46,7 @@ Om Rastogi is an MS student in Artificial Intelligence at Northeastern Universit
 - Augmented Cognition Lab, Northeastern University. Co-author (7th of 10 authors).
 - MotionBlind is a contrastive, minimal-pairs benchmark of self-recorded clip pairs that differ only in motion (speed, magnitude, direction).
 - Open Video-LLMs score near the 6.25% chance floor. Only Gemini 3.1 Pro clears the benchmark overall.
-- Under review at the NeurIPS 2026 Workshop on World Models in Physical AI.
+- arXiv preprint: https://arxiv.org/abs/2609.09528
 - Project page: https://omrastogi.github.io/projects/motionblind/
 - Code: https://github.com/ostadabbas/MotionBlind
 
@@ -149,9 +149,13 @@ Om Rastogi is an MS student in Artificial Intelligence at Northeastern Universit
 ## Publications
 
 1. Wen Xie, Om Rastogi, Sai Siddhartha Vivek Dhir Rangoju, Gijs Overgoor, Yakov Bart, Sarah Ostadabbas. "AdShot: A Benchmark for Advertisement Video Clipping with Multimodal LLMs." NeurIPS 2026 Datasets and Benchmarks Track, 2026.
-2. Dhairya Bhatia, Bishoy Galoaa, Oliver Fritsche, Shahid Kamal, Muhammad Obaidullah Abdul Salam, Umer Saleem, Om Rastogi, Frania Felix Chettiar, Nesli Erdoğmuş, Sarah Ostadabbas. "MotionBlind: Probing the Illusion of Motion Understanding in Video-LLMs." Under review, NeurIPS 2026 Workshop on World Models in Physical AI, 2026.
+2. Dhairya Bhatia, Bishoy Galoaa, Oliver Fritsche, Shahid Kamal, Muhammad Obaidullah Abdul Salam, Umer Saleem, Om Rastogi, Frania Felix Chettiar, Nesli Erdoğmuş, Sarah Ostadabbas. "MotionBlind: Probing the Illusion of Motion Understanding in Video-LLMs." arXiv preprint arXiv:2609.09528, 2026.
 3. Om Rastogi. "Enhancing Pretrained Machine Translation Models: A Literature Review." Preprint, Zenodo, 2025. DOI: 10.5281/zenodo.14649605.
 4. Om Rastogi. "Color Masking Method for Variable Luminosity in Videos with Application in Lane Detection Systems." Proceedings of International Conference on Machine Intelligence and Data Science Applications, Springer, 2021. DOI: 10.1007/978-981-33-4087-9_24.
+
+## Conference Abstracts
+
+1. Abstract on gait-based neurological diagnosis with vision-language models, with Johns Hopkins and Credence. Society for Neuroscience (SfN) Annual Meeting, Washington, D.C., 2026.
 
 ## Skills
 

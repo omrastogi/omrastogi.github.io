@@ -18,3 +18,7 @@ nav_order: 2
 {% bibliography %}
 
 </div>
+
+## conference abstracts
+
+- Abstract on gait-based neurological diagnosis with vision-language models, with Johns Hopkins and Credence. Society for Neuroscience (SfN) Annual Meeting, Washington, D.C., 2026.

@@ -8,7 +8,7 @@ importance: 1.5
 category: research
 ---
 
-**MotionBlind: Probing the Illusion of Motion Understanding in Video-LLMs** is a benchmark from the Augmented Cognition Lab, Northeastern University, under review at the NeurIPS 2026 Workshop on World Models in Physical AI.
+**MotionBlind: Probing the Illusion of Motion Understanding in Video-LLMs** is a benchmark from the Augmented Cognition Lab, Northeastern University, available as an [arXiv preprint](https://arxiv.org/abs/2609.09528).
 
 ## Abstract
 
@@ -24,7 +24,7 @@ A video large language model can watch two clips of the same person in the same 
 
 - **Website:** [ostadabbas.github.io/motionblind.github.io](https://ostadabbas.github.io/motionblind.github.io/)
 - **Code:** [github.com/ostadabbas/MotionBlind](https://github.com/ostadabbas/MotionBlind)
-<!-- TODO: add the paper link (arXiv or OpenReview) once public. -->
+- **Paper:** [arXiv:2609.09528](https://arxiv.org/abs/2609.09528)
 
 ## My role
 
